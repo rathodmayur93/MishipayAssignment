@@ -13,6 +13,17 @@
 		77820A7525A098C30094AB2F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 77820A7325A098C30094AB2F /* Main.storyboard */; };
 		77820A7725A098C70094AB2F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 77820A7625A098C70094AB2F /* Assets.xcassets */; };
 		77820A7A25A098C70094AB2F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 77820A7825A098C70094AB2F /* LaunchScreen.storyboard */; };
+		77820A8B25A09A1E0094AB2F /* ParentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77820A8A25A09A1E0094AB2F /* ParentViewController.swift */; };
+		77820A9125A09A980094AB2F /* ColorUtilsProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77820A9025A09A980094AB2F /* ColorUtilsProtocol.swift */; };
+		77820A9625A09AB00094AB2F /* ColorUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77820A9525A09AB00094AB2F /* ColorUtils.swift */; };
+		77820A9A25A09AE20094AB2F /* ColorsEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77820A9925A09AE20094AB2F /* ColorsEnum.swift */; };
+		77820AA025A09B140094AB2F /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77820A9F25A09B140094AB2F /* UIColor+Extension.swift */; };
+		77820AA625A09BAE0094AB2F /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77820AA525A09BAE0094AB2F /* Router.swift */; };
+		77820AAA25A09BC20094AB2F /* RouterImplementation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77820AA925A09BC20094AB2F /* RouterImplementation.swift */; };
+		77820AAD25A09BDD0094AB2F /* AllViewControllerEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77820AAC25A09BDD0094AB2F /* AllViewControllerEnum.swift */; };
+		77820AB025A09CDC0094AB2F /* ScannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77820AAF25A09CDC0094AB2F /* ScannerViewController.swift */; };
+		77820AB325A09CE90094AB2F /* InvoiceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77820AB225A09CE90094AB2F /* InvoiceViewController.swift */; };
+		77820AB725A09D440094AB2F /* CartTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77820AB625A09D440094AB2F /* CartTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +35,17 @@
 		77820A7625A098C70094AB2F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		77820A7925A098C70094AB2F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		77820A7B25A098C70094AB2F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		77820A8A25A09A1E0094AB2F /* ParentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParentViewController.swift; sourceTree = "<group>"; };
+		77820A9025A09A980094AB2F /* ColorUtilsProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorUtilsProtocol.swift; sourceTree = "<group>"; };
+		77820A9525A09AB00094AB2F /* ColorUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorUtils.swift; sourceTree = "<group>"; };
+		77820A9925A09AE20094AB2F /* ColorsEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorsEnum.swift; sourceTree = "<group>"; };
+		77820A9F25A09B140094AB2F /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
+		77820AA525A09BAE0094AB2F /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
+		77820AA925A09BC20094AB2F /* RouterImplementation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouterImplementation.swift; sourceTree = "<group>"; };
+		77820AAC25A09BDD0094AB2F /* AllViewControllerEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllViewControllerEnum.swift; sourceTree = "<group>"; };
+		77820AAF25A09CDC0094AB2F /* ScannerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannerViewController.swift; sourceTree = "<group>"; };
+		77820AB225A09CE90094AB2F /* InvoiceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvoiceViewController.swift; sourceTree = "<group>"; };
+		77820AB625A09D440094AB2F /* CartTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +78,130 @@
 		77820A6C25A098C30094AB2F /* MishiPay */ = {
 			isa = PBXGroup;
 			children = (
+				77820AA425A09B9E0094AB2F /* Router */,
+				77820A9825A09ACD0094AB2F /* Reources */,
+				77820A8D25A09A730094AB2F /* Helper */,
+				77820A8225A099C20094AB2F /* Scene */,
 				77820A6D25A098C30094AB2F /* AppDelegate.swift */,
 				77820A6F25A098C30094AB2F /* SceneDelegate.swift */,
-				77820A7125A098C30094AB2F /* ViewController.swift */,
-				77820A7325A098C30094AB2F /* Main.storyboard */,
 				77820A7625A098C70094AB2F /* Assets.xcassets */,
 				77820A7825A098C70094AB2F /* LaunchScreen.storyboard */,
 				77820A7B25A098C70094AB2F /* Info.plist */,
 			);
 			path = MishiPay;
+			sourceTree = "<group>";
+		};
+		77820A8225A099C20094AB2F /* Scene */ = {
+			isa = PBXGroup;
+			children = (
+				77820A8925A09A120094AB2F /* Parent */,
+				77820A8525A099EB0094AB2F /* Invoice */,
+				77820A8425A099DF0094AB2F /* Scanner */,
+				77820A8325A099DB0094AB2F /* Cart */,
+				77820A7325A098C30094AB2F /* Main.storyboard */,
+			);
+			path = Scene;
+			sourceTree = "<group>";
+		};
+		77820A8325A099DB0094AB2F /* Cart */ = {
+			isa = PBXGroup;
+			children = (
+				77820AB525A09D340094AB2F /* Cell */,
+				77820A8725A099FC0094AB2F /* Controller */,
+			);
+			path = Cart;
+			sourceTree = "<group>";
+		};
+		77820A8425A099DF0094AB2F /* Scanner */ = {
+			isa = PBXGroup;
+			children = (
+				77820AAF25A09CDC0094AB2F /* ScannerViewController.swift */,
+			);
+			path = Scanner;
+			sourceTree = "<group>";
+		};
+		77820A8525A099EB0094AB2F /* Invoice */ = {
+			isa = PBXGroup;
+			children = (
+				77820AB225A09CE90094AB2F /* InvoiceViewController.swift */,
+			);
+			path = Invoice;
+			sourceTree = "<group>";
+		};
+		77820A8725A099FC0094AB2F /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				77820A7125A098C30094AB2F /* ViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		77820A8925A09A120094AB2F /* Parent */ = {
+			isa = PBXGroup;
+			children = (
+				77820A8A25A09A1E0094AB2F /* ParentViewController.swift */,
+			);
+			path = Parent;
+			sourceTree = "<group>";
+		};
+		77820A8D25A09A730094AB2F /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				77820A8E25A09A7B0094AB2F /* ColorHelper */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
+		77820A8E25A09A7B0094AB2F /* ColorHelper */ = {
+			isa = PBXGroup;
+			children = (
+				77820A9025A09A980094AB2F /* ColorUtilsProtocol.swift */,
+				77820A9525A09AB00094AB2F /* ColorUtils.swift */,
+			);
+			path = ColorHelper;
+			sourceTree = "<group>";
+		};
+		77820A9825A09ACD0094AB2F /* Reources */ = {
+			isa = PBXGroup;
+			children = (
+				77820A9D25A09AFC0094AB2F /* Extension */,
+				77820A9E25A09B030094AB2F /* Enum */,
+			);
+			path = Reources;
+			sourceTree = "<group>";
+		};
+		77820A9D25A09AFC0094AB2F /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				77820A9F25A09B140094AB2F /* UIColor+Extension.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		77820A9E25A09B030094AB2F /* Enum */ = {
+			isa = PBXGroup;
+			children = (
+				77820A9925A09AE20094AB2F /* ColorsEnum.swift */,
+				77820AAC25A09BDD0094AB2F /* AllViewControllerEnum.swift */,
+			);
+			path = Enum;
+			sourceTree = "<group>";
+		};
+		77820AA425A09B9E0094AB2F /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				77820AA525A09BAE0094AB2F /* Router.swift */,
+				77820AA925A09BC20094AB2F /* RouterImplementation.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		77820AB525A09D340094AB2F /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				77820AB625A09D440094AB2F /* CartTableViewCell.swift */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,9 +274,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				77820A9125A09A980094AB2F /* ColorUtilsProtocol.swift in Sources */,
+				77820A9A25A09AE20094AB2F /* ColorsEnum.swift in Sources */,
+				77820AB325A09CE90094AB2F /* InvoiceViewController.swift in Sources */,
+				77820AAA25A09BC20094AB2F /* RouterImplementation.swift in Sources */,
 				77820A7225A098C30094AB2F /* ViewController.swift in Sources */,
 				77820A6E25A098C30094AB2F /* AppDelegate.swift in Sources */,
+				77820AA625A09BAE0094AB2F /* Router.swift in Sources */,
+				77820AB725A09D440094AB2F /* CartTableViewCell.swift in Sources */,
+				77820A9625A09AB00094AB2F /* ColorUtils.swift in Sources */,
+				77820AB025A09CDC0094AB2F /* ScannerViewController.swift in Sources */,
+				77820AAD25A09BDD0094AB2F /* AllViewControllerEnum.swift in Sources */,
+				77820A8B25A09A1E0094AB2F /* ParentViewController.swift in Sources */,
 				77820A7025A098C30094AB2F /* SceneDelegate.swift in Sources */,
+				77820AA025A09B140094AB2F /* UIColor+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
