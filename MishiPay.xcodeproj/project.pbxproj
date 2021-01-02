@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7725C34725A0A2A00074FEC9 /* CartTableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7725C34625A0A2A00074FEC9 /* CartTableViewDataSource.swift */; };
+		7725C34B25A0A2A90074FEC9 /* CartTableViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7725C34A25A0A2A90074FEC9 /* CartTableViewDelegate.swift */; };
+		7725C34F25A0A2C10074FEC9 /* CartPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7725C34E25A0A2C10074FEC9 /* CartPresenter.swift */; };
+		7725C35425A0A36E0074FEC9 /* CartModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7725C35325A0A36E0074FEC9 /* CartModel.swift */; };
+		7725C35825A0A58B0074FEC9 /* Double+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7725C35725A0A58B0074FEC9 /* Double+Extension.swift */; };
 		77820A6E25A098C30094AB2F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77820A6D25A098C30094AB2F /* AppDelegate.swift */; };
 		77820A7025A098C30094AB2F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77820A6F25A098C30094AB2F /* SceneDelegate.swift */; };
 		77820A7225A098C30094AB2F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77820A7125A098C30094AB2F /* ViewController.swift */; };
@@ -23,10 +28,17 @@
 		77820AAD25A09BDD0094AB2F /* AllViewControllerEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77820AAC25A09BDD0094AB2F /* AllViewControllerEnum.swift */; };
 		77820AB025A09CDC0094AB2F /* ScannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77820AAF25A09CDC0094AB2F /* ScannerViewController.swift */; };
 		77820AB325A09CE90094AB2F /* InvoiceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77820AB225A09CE90094AB2F /* InvoiceViewController.swift */; };
-		77820AB725A09D440094AB2F /* CartTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77820AB625A09D440094AB2F /* CartTableViewCell.swift */; };
+		77820ABD25A09E7E0094AB2F /* CartTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77820ABB25A09E7E0094AB2F /* CartTableViewCell.swift */; };
+		77820ABE25A09E7E0094AB2F /* CartTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 77820ABC25A09E7E0094AB2F /* CartTableViewCell.xib */; };
+		77820AC125A0A0D00094AB2F /* ReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77820AC025A0A0D00094AB2F /* ReusableView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7725C34625A0A2A00074FEC9 /* CartTableViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartTableViewDataSource.swift; sourceTree = "<group>"; };
+		7725C34A25A0A2A90074FEC9 /* CartTableViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartTableViewDelegate.swift; sourceTree = "<group>"; };
+		7725C34E25A0A2C10074FEC9 /* CartPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartPresenter.swift; sourceTree = "<group>"; };
+		7725C35325A0A36E0074FEC9 /* CartModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartModel.swift; sourceTree = "<group>"; };
+		7725C35725A0A58B0074FEC9 /* Double+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+Extension.swift"; sourceTree = "<group>"; };
 		77820A6A25A098C30094AB2F /* MishiPay.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MishiPay.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		77820A6D25A098C30094AB2F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		77820A6F25A098C30094AB2F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -45,7 +57,9 @@
 		77820AAC25A09BDD0094AB2F /* AllViewControllerEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllViewControllerEnum.swift; sourceTree = "<group>"; };
 		77820AAF25A09CDC0094AB2F /* ScannerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannerViewController.swift; sourceTree = "<group>"; };
 		77820AB225A09CE90094AB2F /* InvoiceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvoiceViewController.swift; sourceTree = "<group>"; };
-		77820AB625A09D440094AB2F /* CartTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartTableViewCell.swift; sourceTree = "<group>"; };
+		77820ABB25A09E7E0094AB2F /* CartTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartTableViewCell.swift; sourceTree = "<group>"; };
+		77820ABC25A09E7E0094AB2F /* CartTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CartTableViewCell.xib; sourceTree = "<group>"; };
+		77820AC025A0A0D00094AB2F /* ReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +73,41 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7725C34525A0A28D0074FEC9 /* DataSource */ = {
+			isa = PBXGroup;
+			children = (
+				7725C34625A0A2A00074FEC9 /* CartTableViewDataSource.swift */,
+				7725C34A25A0A2A90074FEC9 /* CartTableViewDelegate.swift */,
+			);
+			path = DataSource;
+			sourceTree = "<group>";
+		};
+		7725C34D25A0A2AD0074FEC9 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				7725C34525A0A28D0074FEC9 /* DataSource */,
+				7725C34E25A0A2C10074FEC9 /* CartPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		7725C35225A0A3660074FEC9 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				7725C35325A0A36E0074FEC9 /* CartModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		7725C35A25A0A6C60074FEC9 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				77820AB525A09D340094AB2F /* Cell */,
+				77820A8725A099FC0094AB2F /* Controller */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		77820A6125A098C30094AB2F = {
 			isa = PBXGroup;
 			children = (
@@ -106,8 +155,9 @@
 		77820A8325A099DB0094AB2F /* Cart */ = {
 			isa = PBXGroup;
 			children = (
-				77820AB525A09D340094AB2F /* Cell */,
-				77820A8725A099FC0094AB2F /* Controller */,
+				7725C35A25A0A6C60074FEC9 /* View */,
+				7725C35225A0A3660074FEC9 /* Model */,
+				7725C34D25A0A2AD0074FEC9 /* Presenter */,
 			);
 			path = Cart;
 			sourceTree = "<group>";
@@ -148,6 +198,7 @@
 			isa = PBXGroup;
 			children = (
 				77820A8E25A09A7B0094AB2F /* ColorHelper */,
+				77820AC025A0A0D00094AB2F /* ReusableView.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -174,6 +225,7 @@
 			isa = PBXGroup;
 			children = (
 				77820A9F25A09B140094AB2F /* UIColor+Extension.swift */,
+				7725C35725A0A58B0074FEC9 /* Double+Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -199,7 +251,8 @@
 		77820AB525A09D340094AB2F /* Cell */ = {
 			isa = PBXGroup;
 			children = (
-				77820AB625A09D440094AB2F /* CartTableViewCell.swift */,
+				77820ABB25A09E7E0094AB2F /* CartTableViewCell.swift */,
+				77820ABC25A09E7E0094AB2F /* CartTableViewCell.xib */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -264,6 +317,7 @@
 				77820A7A25A098C70094AB2F /* LaunchScreen.storyboard in Resources */,
 				77820A7725A098C70094AB2F /* Assets.xcassets in Resources */,
 				77820A7525A098C30094AB2F /* Main.storyboard in Resources */,
+				77820ABE25A09E7E0094AB2F /* CartTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -274,14 +328,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7725C34725A0A2A00074FEC9 /* CartTableViewDataSource.swift in Sources */,
 				77820A9125A09A980094AB2F /* ColorUtilsProtocol.swift in Sources */,
+				7725C34F25A0A2C10074FEC9 /* CartPresenter.swift in Sources */,
+				7725C34B25A0A2A90074FEC9 /* CartTableViewDelegate.swift in Sources */,
 				77820A9A25A09AE20094AB2F /* ColorsEnum.swift in Sources */,
 				77820AB325A09CE90094AB2F /* InvoiceViewController.swift in Sources */,
 				77820AAA25A09BC20094AB2F /* RouterImplementation.swift in Sources */,
 				77820A7225A098C30094AB2F /* ViewController.swift in Sources */,
+				7725C35825A0A58B0074FEC9 /* Double+Extension.swift in Sources */,
 				77820A6E25A098C30094AB2F /* AppDelegate.swift in Sources */,
+				7725C35425A0A36E0074FEC9 /* CartModel.swift in Sources */,
+				77820AC125A0A0D00094AB2F /* ReusableView.swift in Sources */,
 				77820AA625A09BAE0094AB2F /* Router.swift in Sources */,
-				77820AB725A09D440094AB2F /* CartTableViewCell.swift in Sources */,
+				77820ABD25A09E7E0094AB2F /* CartTableViewCell.swift in Sources */,
 				77820A9625A09AB00094AB2F /* ColorUtils.swift in Sources */,
 				77820AB025A09CDC0094AB2F /* ScannerViewController.swift in Sources */,
 				77820AAD25A09BDD0094AB2F /* AllViewControllerEnum.swift in Sources */,

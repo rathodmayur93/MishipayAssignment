@@ -34,4 +34,5 @@ enum AllViewControllerEnum : String {
 /// This Enum containis all the storyboard names
 enum StoryboardAnXIBEnum : String{
     case main = "Main"
+    case cartTableViewCell = "CartTableViewCell"
 }
