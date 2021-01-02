@@ -144,4 +144,21 @@ class DBHelper
         sqlite3_finalize(updateStatement)
     }
     
+    func removeProductFromCart(barcode : String){
+        let updateStatementStirng = "UPDATE product SET isInCart = 0 WHERE barcode = ?;"
+        var updateStatement: OpaquePointer? = nil
+        if sqlite3_prepare_v2(db, updateStatementStirng, -1, &updateStatement, nil) == SQLITE_OK {
+            //sqlite3_bind_int(updateStatement, 1, Int32(barcode) ?? 0)
+            sqlite3_bind_text(updateStatement, 1, (barcode as NSString).utf8String, -1, nil)
+            if sqlite3_step(updateStatement) == SQLITE_DONE {
+                debugPrint("Successfully updated row.")
+            } else {
+                debugPrint("Could not udpate row.")
+            }
+        } else {
+            debugPrint("UPDATE statement could not be prepared")
+        }
+        sqlite3_finalize(updateStatement)
+    }
+    
 }

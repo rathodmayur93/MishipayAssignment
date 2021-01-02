@@ -28,4 +28,14 @@ class CartListDataSource : CartListData, UITableViewDataSource {
         cell.setupCell(product: cartPresenter?.cartListModel?[indexPath.row] ?? Product().getDefaultProduct())
         return cell
     }
+    
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if (editingStyle == UITableViewCell.EditingStyle.delete) {
+            cartPresenter?.removeProductFromCart(barcodeValue: cartPresenter?.cartListModel?[indexPath.row].barcode ?? "-1", index: indexPath.row)
+        }
+    }
 }

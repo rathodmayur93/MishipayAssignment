@@ -8,11 +8,17 @@
 import Foundation
 
 
+protocol CartPresenterDelegate {
+    func reloadTableView()
+}
+
+
 class CartPresenter {
     
     var cartListModel : [Product]?
     private weak var dataSource : CartListDataSource?
     private weak var delegate : CartTableViewDelegate?
+    var cartPresenterDelegate : CartPresenterDelegate?
     var db : DBHelper
     
     //MARK:- Initlaizer
@@ -42,5 +48,11 @@ class CartPresenter {
         
         //Passing data to tableView
         passDataToDataSource()
+    }
+    
+    internal func removeProductFromCart(barcodeValue : String, index : Int){
+        db.removeProductFromCart(barcode: barcodeValue)
+        cartListModel?.remove(at: index)
+        cartPresenterDelegate?.reloadTableView()
     }
 }
