@@ -37,7 +37,7 @@ class CartPresenter {
     internal func addDataInDB(){
         db.insert(id: 1, title: "Prouct 1", price: 100, image: "prodOne", barcode: "663650012040579520201225192309", isInCart: 0)
         db.insert(id: 2, title: "Prouct 2", price: 50, image: "prodTwo", barcode: "BAH20210101008950N209081", isInCart: 0)
-        db.insert(id: 3, title: "Prouct 3", price: 150, image: "prodThree", barcode: "", isInCart: 0)
+        db.insert(id: 3, title: "Prouct 3", price: 150, image: "prodThree", barcode: "http://qr.w69b.com/g/taI8hMa1a", isInCart: 0)
         db.insert(id: 4, title: "Prouct 4", price: 100, image: "prodOne", barcode: "", isInCart: 0)
         db.insert(id: 5, title: "Prouct 5", price: 50, image: "prodTwo", barcode: "", isInCart: 0)
         db.insert(id: 6, title: "Prouct 6", price: 150, image: "prodThree", barcode: "", isInCart: 0)
