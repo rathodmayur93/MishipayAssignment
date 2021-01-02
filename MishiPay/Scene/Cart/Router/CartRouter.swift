@@ -23,12 +23,12 @@ struct CartRouter {
         cartVC.navigationController?.pushViewController(vc, animated: true)
     }
     
-    internal func navigateToInvoiceController(cartVC : ViewController){
+    internal func navigateToInvoiceController(cartVC : ViewController, data : [Product]){
         //Fetching the storyBoard and creating the MovieDetailViewController object
         let mainStoryboard         = UIStoryboard(name: StoryboardAnXIBEnum.main.rawValue,
                                                   bundle: Bundle.main)
-        let vc : UIViewController  = mainStoryboard.instantiateViewController(withIdentifier: AllViewControllerEnum.invoiceViewController.vcIdentifier()) as UIViewController
-        
+        let vc : InvoiceViewController  = mainStoryboard.instantiateViewController(withIdentifier: AllViewControllerEnum.invoiceViewController.vcIdentifier()) as! InvoiceViewController
+        vc.productList = data
         //Presentation style
         vc.modalPresentationStyle   = .automatic
         

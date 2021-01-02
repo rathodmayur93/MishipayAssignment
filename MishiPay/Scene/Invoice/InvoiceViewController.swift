@@ -15,6 +15,7 @@ class InvoiceViewController: ParentViewController {
     
     //MARK:- Varible & Properties
     var productList = [Product]()
+    private var totalPrice = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,6 +32,9 @@ class InvoiceViewController: ParentViewController {
         //Setting up the tableView
         setupTableView()
         
+        //Calculate total price
+        calculateTotalPrice()
+        
     }
     
     //Setting up the TableView
@@ -42,6 +46,15 @@ class InvoiceViewController: ParentViewController {
         
         invoiceTableView.dataSource = self
         invoiceTableView.delegate = self
+    }
+    
+    //Calculate total price
+    private func calculateTotalPrice(){
+        for product in productList{
+            totalPrice += product.price
+        }
+        
+        totalPaid.text = "Total Paid : $" + totalPrice.toString()
     }
 }
 
@@ -58,5 +71,7 @@ extension InvoiceViewController : UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: CartTableViewCell.identifier) as? CartTableViewCell else { return UITableViewCell() }
         
+        cell.setupCell(product: productList[indexPath.row])
+        return cell
     }
 }

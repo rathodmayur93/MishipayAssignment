@@ -81,7 +81,7 @@ class ViewController: ParentViewController {
     }
     
     @IBAction func placeOrderBTAction(_ sender: Any) {
-        
+        CartRouter().navigateToInvoiceController(cartVC: self, data: cartPresenter.cartListModel!)
     }
     
 }
