@@ -11,6 +11,6 @@ import UIKit.UITableView
 class CartTableViewDelegate : CartListData, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 200.0
+        return 120.0
     }
 }

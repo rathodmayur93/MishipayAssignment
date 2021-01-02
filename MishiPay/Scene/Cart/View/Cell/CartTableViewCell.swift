@@ -27,7 +27,7 @@ class CartTableViewCell: UITableViewCell {
     internal func setupCell(product data : Product){
         productIV.image = UIImage(named: data.image)
         productTitle.text = data.title
-        productPrice.text = data.price.toString()
+        productPrice.text = "$" + data.price.toString()
     }
 }
 

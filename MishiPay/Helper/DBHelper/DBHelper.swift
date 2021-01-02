@@ -58,8 +58,8 @@ class DBHelper
     
     func insert(id : Int, title : String, price : Int, image : String, barcode: String)
     {
-        let persons = read()
-        for p in persons
+        let product = read()
+        for p in product
         {
             if p.id == id
             {
@@ -87,7 +87,7 @@ class DBHelper
     }
     
     func read() -> [Product] {
-        let queryStatementString = "SELECT * FROM person;"
+        let queryStatementString = "SELECT * FROM product;"
         var queryStatement: OpaquePointer? = nil
         var psns : [Product] = []
         if sqlite3_prepare_v2(db, queryStatementString, -1, &queryStatement, nil) == SQLITE_OK {
@@ -109,7 +109,7 @@ class DBHelper
     }
     
     func deleteByID(id:Int) {
-        let deleteStatementStirng = "DELETE FROM person WHERE Id = ?;"
+        let deleteStatementStirng = "DELETE FROM product WHERE Id = ?;"
         var deleteStatement: OpaquePointer? = nil
         if sqlite3_prepare_v2(db, deleteStatementStirng, -1, &deleteStatement, nil) == SQLITE_OK {
             sqlite3_bind_int(deleteStatement, 1, Int32(id))
