@@ -7,11 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		770A31EB25A0A87F00030365 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 770A31E925A0A85900030365 /* libsqlite3.tbd */; };
+		770A31EF25A0A8B400030365 /* DBHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 770A31EE25A0A8B400030365 /* DBHelper.swift */; };
 		7725C34725A0A2A00074FEC9 /* CartTableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7725C34625A0A2A00074FEC9 /* CartTableViewDataSource.swift */; };
 		7725C34B25A0A2A90074FEC9 /* CartTableViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7725C34A25A0A2A90074FEC9 /* CartTableViewDelegate.swift */; };
 		7725C34F25A0A2C10074FEC9 /* CartPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7725C34E25A0A2C10074FEC9 /* CartPresenter.swift */; };
 		7725C35425A0A36E0074FEC9 /* CartModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7725C35325A0A36E0074FEC9 /* CartModel.swift */; };
-		7725C35825A0A58B0074FEC9 /* Double+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7725C35725A0A58B0074FEC9 /* Double+Extension.swift */; };
+		7725C35825A0A58B0074FEC9 /* Int+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7725C35725A0A58B0074FEC9 /* Int+Extension.swift */; };
 		77820A6E25A098C30094AB2F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77820A6D25A098C30094AB2F /* AppDelegate.swift */; };
 		77820A7025A098C30094AB2F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77820A6F25A098C30094AB2F /* SceneDelegate.swift */; };
 		77820A7225A098C30094AB2F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77820A7125A098C30094AB2F /* ViewController.swift */; };
@@ -34,11 +36,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		770A31E925A0A85900030365 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		770A31EE25A0A8B400030365 /* DBHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBHelper.swift; sourceTree = "<group>"; };
 		7725C34625A0A2A00074FEC9 /* CartTableViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartTableViewDataSource.swift; sourceTree = "<group>"; };
 		7725C34A25A0A2A90074FEC9 /* CartTableViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartTableViewDelegate.swift; sourceTree = "<group>"; };
 		7725C34E25A0A2C10074FEC9 /* CartPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartPresenter.swift; sourceTree = "<group>"; };
 		7725C35325A0A36E0074FEC9 /* CartModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartModel.swift; sourceTree = "<group>"; };
-		7725C35725A0A58B0074FEC9 /* Double+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+Extension.swift"; sourceTree = "<group>"; };
+		7725C35725A0A58B0074FEC9 /* Int+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+Extension.swift"; sourceTree = "<group>"; };
 		77820A6A25A098C30094AB2F /* MishiPay.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MishiPay.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		77820A6D25A098C30094AB2F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		77820A6F25A098C30094AB2F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -67,12 +71,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				770A31EB25A0A87F00030365 /* libsqlite3.tbd in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		770A31E825A0A85900030365 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				770A31E925A0A85900030365 /* libsqlite3.tbd */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		770A31ED25A0A8A400030365 /* DBHelper */ = {
+			isa = PBXGroup;
+			children = (
+				770A31EE25A0A8B400030365 /* DBHelper.swift */,
+			);
+			path = DBHelper;
+			sourceTree = "<group>";
+		};
 		7725C34525A0A28D0074FEC9 /* DataSource */ = {
 			isa = PBXGroup;
 			children = (
@@ -113,6 +134,7 @@
 			children = (
 				77820A6C25A098C30094AB2F /* MishiPay */,
 				77820A6B25A098C30094AB2F /* Products */,
+				770A31E825A0A85900030365 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -197,6 +219,7 @@
 		77820A8D25A09A730094AB2F /* Helper */ = {
 			isa = PBXGroup;
 			children = (
+				770A31ED25A0A8A400030365 /* DBHelper */,
 				77820A8E25A09A7B0094AB2F /* ColorHelper */,
 				77820AC025A0A0D00094AB2F /* ReusableView.swift */,
 			);
@@ -225,7 +248,7 @@
 			isa = PBXGroup;
 			children = (
 				77820A9F25A09B140094AB2F /* UIColor+Extension.swift */,
-				7725C35725A0A58B0074FEC9 /* Double+Extension.swift */,
+				7725C35725A0A58B0074FEC9 /* Int+Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -336,8 +359,9 @@
 				77820AB325A09CE90094AB2F /* InvoiceViewController.swift in Sources */,
 				77820AAA25A09BC20094AB2F /* RouterImplementation.swift in Sources */,
 				77820A7225A098C30094AB2F /* ViewController.swift in Sources */,
-				7725C35825A0A58B0074FEC9 /* Double+Extension.swift in Sources */,
+				7725C35825A0A58B0074FEC9 /* Int+Extension.swift in Sources */,
 				77820A6E25A098C30094AB2F /* AppDelegate.swift in Sources */,
+				770A31EF25A0A8B400030365 /* DBHelper.swift in Sources */,
 				7725C35425A0A36E0074FEC9 /* CartModel.swift in Sources */,
 				77820AC125A0A0D00094AB2F /* ReusableView.swift in Sources */,
 				77820AA625A09BAE0094AB2F /* Router.swift in Sources */,
@@ -424,7 +448,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -479,7 +503,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;

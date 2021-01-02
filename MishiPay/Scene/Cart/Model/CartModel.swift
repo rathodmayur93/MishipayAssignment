@@ -9,13 +9,15 @@ import Foundation
 
 
 struct Product {
+    var id    : Int!
     var title : String!
-    var price : Double!
+    var price : Int!
     var image : String!
+    var barcode : String!
 }
 
 extension Product {
     func getDefaultProduct() -> Product {
-        return Product(title: "No Product", price: 0.0, image: "Default")
+        return Product(id : 0, title: "No Product", price: 0, image: "Default", barcode: "")
     }
 }

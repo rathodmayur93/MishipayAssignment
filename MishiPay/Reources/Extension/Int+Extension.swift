@@ -7,7 +7,7 @@
 
 import Foundation
 
-extension Double {
+extension Int {
     
     //This function will conver the double value into the string
     func toString() -> String {
