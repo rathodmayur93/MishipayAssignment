@@ -13,60 +13,28 @@ struct ColorUtils : ColorUtilsProtocol {
     static let sharedInstance = ColorUtils()
     private init() {}
     
-    func getViewControllerBackgroundColor() -> UIColor {
-        if #available(iOS 11.0, *) {
-            return UIColor(named: ColorsEnum.backgroundColor.rawValue) ?? UIColor.gray
-        } else {
-            // Fallback on earlier versions
-            return UIColor().hexStringToUIColor(color: ColorsEnum.backgroundColor)
-        }
-    }
-    
-    func getPrimaryButtonBorderColor() -> UIColor {
-        if #available(iOS 11.0, *) {
-            return UIColor(named: ColorsEnum.textColor.rawValue) ?? UIColor.gray
-        } else {
-            // Fallback on earlier versions
-            return UIColor().hexStringToUIColor(color: ColorsEnum.textColor)
-        }
-    }
     
     /// This will retunr the primary buttons background color
     internal func getPrimaryButtonBackgroundColor() -> UIColor {
         if #available(iOS 11.0, *) {
-            return UIColor(named: ColorsEnum.primary.rawValue) ?? UIColor.gray
+            return UIColor(named: ColorsEnum.buttonBackground.rawValue) ?? UIColor.gray
         } else {
             // Fallback on earlier versions
-            return UIColor().hexStringToUIColor(color: ColorsEnum.primary)
+            return UIColor().hexStringToUIColor(color: ColorsEnum.buttonBackground)
         }
     }
     
-    internal func getTextColor() -> UIColor{
+    /// This will retunr the primary buttons text color
+    internal func getPrimaryButtonTextColor() -> UIColor {
         if #available(iOS 11.0, *) {
-            return UIColor(named: ColorsEnum.textColor.rawValue) ?? UIColor.gray
+            return UIColor(named: ColorsEnum.buttonTextColor.rawValue) ?? UIColor.gray
         } else {
             // Fallback on earlier versions
-            return UIColor().hexStringToUIColor(color: ColorsEnum.textColor)
+            return UIColor().hexStringToUIColor(color: ColorsEnum.buttonTextColor)
         }
     }
     
-    internal func getBackgrounColor() -> UIColor{
-        if #available(iOS 11.0, *) {
-            return UIColor(named: ColorsEnum.backgroundColor.rawValue) ?? UIColor.gray
-        } else {
-            // Fallback on earlier versions
-            return UIColor().hexStringToUIColor(color: ColorsEnum.backgroundColor)
-        }
-    }
-    
-    internal func getPrimaryColor() -> UIColor{
-        if #available(iOS 11.0, *) {
-            return UIColor(named: ColorsEnum.primary.rawValue) ?? UIColor.gray
-        } else {
-            // Fallback on earlier versions
-            return UIColor().hexStringToUIColor(color: ColorsEnum.primary)
-        }
-    }
+  
     
     // Added while code review
     internal func getColor(color name : ColorsEnum) -> UIColor{

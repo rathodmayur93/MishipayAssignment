@@ -14,10 +14,11 @@ struct Product {
     var price : Int!
     var image : String!
     var barcode : String!
+    var isInCart : Int!
 }
 
 extension Product {
     func getDefaultProduct() -> Product {
-        return Product(id : 0, title: "No Product", price: 0, image: "Default", barcode: "")
+        return Product(id : 0, title: "No Product", price: 0, image: "Default", barcode: "", isInCart: 0)
     }
 }

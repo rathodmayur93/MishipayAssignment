@@ -11,6 +11,7 @@ class ViewController: ParentViewController {
     
     //MARK:- IBOutlet
     @IBOutlet weak var cartTableView : UITableView!
+    @IBOutlet weak var placeOrderBT : UIButton!
     
     //MARK:- Variables
     private let dataSource = CartListDataSource()
@@ -31,6 +32,11 @@ class ViewController: ParentViewController {
         setUI()
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        print("== ViewDidAppear ==")
+        cartPresenter.getAllProduct()
+        cartTableView.reloadData()
+    }
     
     //MARK:- UI Methods
     private func setUI(){
@@ -38,11 +44,22 @@ class ViewController: ParentViewController {
         self.title = AllViewControllerEnum.cartViewController.getTitle()
         
         //Setting up the db
-        setupDatabase()
+        cartPresenter.addDataInDB()
         
         //Setting up the tableView
         setupTableView()
         
+        //Setting up button
+        configureButton()
+        
+    }
+    
+    //COnfigure button
+    private func configureButton(){
+        placeOrderBT.backgroundColor = ColorUtils.sharedInstance.getPrimaryButtonBackgroundColor()
+        placeOrderBT.setTitleColor(ColorUtils.sharedInstance.getPrimaryButtonTextColor(),
+                                   for: .normal)
+        placeOrderBT.setTitle("Place Order", for: .normal)
     }
     
     //Setting up the TableView
@@ -58,9 +75,13 @@ class ViewController: ParentViewController {
         
     }
     
-    //Setting up the database
-    private func setupDatabase(){
-        cartPresenter.addDataInDB()
-        cartPresenter.getAllProduct()
+    //MARK: - IBAction Method
+    @IBAction func barButtonAction(_ sender: Any) {
+        CartRouter().navigateToScannerViewController(cartVC: self)
     }
+    
+    @IBAction func placeOrderBTAction(_ sender: Any) {
+        
+    }
+    
 }

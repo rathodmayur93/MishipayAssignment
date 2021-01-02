@@ -39,7 +39,7 @@ class DBHelper
     }
     
     func createTable() {
-        let createTableString = "CREATE TABLE IF NOT EXISTS product(Id INTEGER PRIMARY KEY,title TEXT,price DOUBLE,image TEXT, barcode TEXT);"
+        let createTableString = "CREATE TABLE IF NOT EXISTS product(Id INTEGER PRIMARY KEY,title TEXT,price DOUBLE,image TEXT, barcode TEXT, isInCart INTEGER);"
         var createTableStatement: OpaquePointer? = nil
         if sqlite3_prepare_v2(db, createTableString, -1, &createTableStatement, nil) == SQLITE_OK
         {
@@ -56,7 +56,7 @@ class DBHelper
     }
     
     
-    func insert(id : Int, title : String, price : Int, image : String, barcode: String)
+    func insert(id : Int, title : String, price : Int, image : String, barcode: String, isInCart : Int)
     {
         let product = read()
         for p in product
@@ -66,7 +66,7 @@ class DBHelper
                 return
             }
         }
-        let insertStatementString = "INSERT INTO product (Id, title, price, image, barcode) VALUES (?, ?, ?, ?, ?);"
+        let insertStatementString = "INSERT INTO product (Id, title, price, image, barcode, isInCart) VALUES (?, ?, ?, ?, ?, ?);"
         var insertStatement: OpaquePointer? = nil
         if sqlite3_prepare_v2(db, insertStatementString, -1, &insertStatement, nil) == SQLITE_OK {
             sqlite3_bind_int(insertStatement, 1, Int32(id))
@@ -74,6 +74,7 @@ class DBHelper
             sqlite3_bind_int(insertStatement, 3, Int32(price))
             sqlite3_bind_text(insertStatement, 4, (image as NSString).utf8String, -1, nil)
             sqlite3_bind_text(insertStatement, 5, (barcode as NSString).utf8String, -1, nil)
+            sqlite3_bind_int(insertStatement, 6, Int32(isInCart))
             
             if sqlite3_step(insertStatement) == SQLITE_DONE {
                 debugPrint("Successfully inserted row.")
@@ -87,7 +88,7 @@ class DBHelper
     }
     
     func read() -> [Product] {
-        let queryStatementString = "SELECT * FROM product;"
+        let queryStatementString = "SELECT * FROM product WHERE isInCart = 1;"
         var queryStatement: OpaquePointer? = nil
         var psns : [Product] = []
         if sqlite3_prepare_v2(db, queryStatementString, -1, &queryStatement, nil) == SQLITE_OK {
@@ -97,9 +98,11 @@ class DBHelper
                 let price = sqlite3_column_int(queryStatement!, 2)
                 let image = String(describing: String(cString: sqlite3_column_text(queryStatement, 3)))
                 let barcode = String(describing: String(cString: sqlite3_column_text(queryStatement, 4)))
-                psns.append(Product(id: Int(id), title: title, price: Int(price), image: image, barcode: barcode))
+                let isInCart = sqlite3_column_int(queryStatement!, 5)
+                
+                psns.append(Product(id: Int(id), title: title, price: Int(price), image: image, barcode: barcode, isInCart: Int(isInCart)))
                 debugPrint("Query Result:")
-                debugPrint("\(id) | \(title) | \(price)| \(image)")
+                debugPrint("\(id) | \(title) | \(price)| \(image)| \(isInCart)| \(barcode)")
             }
         } else {
             print("SELECT statement could not be prepared")
@@ -122,6 +125,23 @@ class DBHelper
             debugPrint("DELETE statement could not be prepared")
         }
         sqlite3_finalize(deleteStatement)
+    }
+    
+    func addProductInCart(barcode : String){
+        let updateStatementStirng = "UPDATE product SET isInCart = 1 WHERE barcode = ?;"
+        var updateStatement: OpaquePointer? = nil
+        if sqlite3_prepare_v2(db, updateStatementStirng, -1, &updateStatement, nil) == SQLITE_OK {
+            //sqlite3_bind_int(updateStatement, 1, Int32(barcode) ?? 0)
+            sqlite3_bind_text(updateStatement, 1, (barcode as NSString).utf8String, -1, nil)
+            if sqlite3_step(updateStatement) == SQLITE_DONE {
+                debugPrint("Successfully updated row.")
+            } else {
+                debugPrint("Could not udpate row.")
+            }
+        } else {
+            debugPrint("UPDATE statement could not be prepared")
+        }
+        sqlite3_finalize(updateStatement)
     }
     
 }

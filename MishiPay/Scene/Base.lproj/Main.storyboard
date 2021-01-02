@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="FD5-k5-MJw">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -17,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="fO6-ix-AG6">
-                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="724"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="CartTableViewCell" id="yBg-Sf-9oT">
@@ -34,21 +35,40 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="aR1-eP-Qwu"/>
                                 </connections>
                             </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Yc-KJ-JDr">
+                                <rect key="frame" x="0.0" y="820" width="414" height="42"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="42" id="Nmx-Eg-gJJ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
+                                <state key="normal" title="Place Order"/>
+                                <connections>
+                                    <action selector="placeOrderBTAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="n8o-uT-q9N"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="7Yc-KJ-JDr" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="7np-cB-u8E"/>
                             <constraint firstItem="fO6-ix-AG6" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="ERT-2O-0j9"/>
                             <constraint firstItem="fO6-ix-AG6" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="JYL-CU-oOW"/>
                             <constraint firstItem="fO6-ix-AG6" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Jsp-0A-hKZ"/>
-                            <constraint firstItem="fO6-ix-AG6" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="aIN-1q-ZpR"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="7Yc-KJ-JDr" secondAttribute="trailing" id="PJc-LE-AaD"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="7Yc-KJ-JDr" secondAttribute="bottom" id="x0O-pr-VHI"/>
+                            <constraint firstItem="7Yc-KJ-JDr" firstAttribute="top" secondItem="fO6-ix-AG6" secondAttribute="bottom" constant="8" id="yRY-Wt-ECf"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="3vr-Gh-tfX">
-                        <barButtonItem key="rightBarButtonItem" image="plus" catalog="system" id="4RB-HL-kFA"/>
+                        <barButtonItem key="rightBarButtonItem" image="plus" catalog="system" id="4RB-HL-kFA">
+                            <connections>
+                                <action selector="barButtonAction:" destination="BYZ-38-t0r" id="wCN-sx-30l"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="cartTableView" destination="fO6-ix-AG6" id="xBl-wt-kZX"/>
+                        <outlet property="placeOrderBT" destination="7Yc-KJ-JDr" id="Mo4-gZ-eqN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -58,7 +78,7 @@
         <!--Scanner View Controller-->
         <scene sceneID="Dda-Sp-bno">
             <objects>
-                <viewController id="DyD-YL-fJI" customClass="ScannerViewController" customModule="MishiPay" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ScannerViewController" id="DyD-YL-fJI" customClass="ScannerViewController" customModule="MishiPay" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="17I-Cg-IK6">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -91,17 +111,55 @@
         <!--Invoice View Controller-->
         <scene sceneID="EaY-0z-D2j">
             <objects>
-                <viewController id="YUd-nJ-HW4" customClass="InvoiceViewController" customModule="MishiPay" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="InvoiceViewController" id="YUd-nJ-HW4" customClass="InvoiceViewController" customModule="MishiPay" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="AlY-oX-jOc">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="9xn-cY-aXL">
+                                <rect key="frame" x="0.0" y="44" width="414" height="762"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="CartTableViewCell" id="uH1-mN-KoE">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="uH1-mN-KoE" id="l9z-6D-pzi">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="YUd-nJ-HW4" id="jLm-TS-Bed"/>
+                                    <outlet property="delegate" destination="YUd-nJ-HW4" id="Wgg-j7-HCT"/>
+                                </connections>
+                            </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total Payable" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rYy-cB-x7R">
+                                <rect key="frame" x="8" y="814" width="398" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="PL7-Uj-yXQ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="UJG-Mn-8j4"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="rYy-cB-x7R" firstAttribute="top" secondItem="9xn-cY-aXL" secondAttribute="bottom" constant="8" symbolic="YES" id="Bi8-fj-Iz4"/>
+                            <constraint firstItem="9xn-cY-aXL" firstAttribute="trailing" secondItem="UJG-Mn-8j4" secondAttribute="trailing" id="FpO-s3-IOy"/>
+                            <constraint firstItem="UJG-Mn-8j4" firstAttribute="trailing" secondItem="rYy-cB-x7R" secondAttribute="trailing" constant="8" id="erU-DE-2T4"/>
+                            <constraint firstItem="rYy-cB-x7R" firstAttribute="leading" secondItem="UJG-Mn-8j4" secondAttribute="leading" constant="8" id="fEH-wY-r9V"/>
+                            <constraint firstItem="9xn-cY-aXL" firstAttribute="leading" secondItem="UJG-Mn-8j4" secondAttribute="leading" id="kTn-i9-Qpn"/>
+                            <constraint firstItem="9xn-cY-aXL" firstAttribute="top" secondItem="UJG-Mn-8j4" secondAttribute="top" id="ojn-jN-LuI"/>
+                            <constraint firstItem="UJG-Mn-8j4" firstAttribute="bottom" secondItem="rYy-cB-x7R" secondAttribute="bottom" constant="8" id="yGX-Jc-BUO"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KlN-T2-EBQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2500" y="94"/>
+            <point key="canvasLocation" x="2498.5507246376815" y="93.75"/>
         </scene>
     </scenes>
     <resources>
